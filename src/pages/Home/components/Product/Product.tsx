@@ -1,4 +1,5 @@
 import React from 'react'
+
 import * as S from './Product.styles'
 import { Product, products } from './Product.types'
 
@@ -44,7 +45,7 @@ export function ProductList() {
     <S.Container>
       <div className="content">
         {products.map((product) => (
-          <Item item={product} />
+          <Item key={product.name} item={product} />
         ))}
       </div>
     </S.Container>
