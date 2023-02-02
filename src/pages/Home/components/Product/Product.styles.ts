@@ -15,7 +15,7 @@ export const Container = styled.div`
     justify-content: center;
   }
 
-  @media (max-width: 512px) {
+  @media (max-width: 712px) {
     .content {
       flex-direction: column;
     }

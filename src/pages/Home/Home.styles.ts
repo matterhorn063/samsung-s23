@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
+<<<<<<< HEAD
   width: 100%;
   background-color: black;
 
@@ -28,4 +29,7 @@ export const Container = styled.div`
       display: block;
     }
   }
+=======
+  ${({ theme }) => css``}
+>>>>>>> 51277461d5f8232858d006c56fe1647e590bc27d
 `
