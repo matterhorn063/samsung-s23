@@ -8,7 +8,7 @@ const Item = (props: { item: Product }) => {
   const [currentIndex, setCurrentIndex] = React.useState(2)
 
   return (
-    <S.ItemContainer>
+    <S.ItemContainer currentIndex={currentIndex}>
       <div
         style={{
           width: `${item.widthPercent}%`,
