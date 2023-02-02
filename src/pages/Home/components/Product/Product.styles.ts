@@ -32,6 +32,12 @@ export const ItemContainer = styled.div`
 
   .img {
     width: 100%;
+    :hover {
+      backface-visibility: hidden;
+      transform: scale(1.08);
+      transition: all 0.2s ease-in-out;
+      overflow: hidden;
+    }
   }
 
   .name {

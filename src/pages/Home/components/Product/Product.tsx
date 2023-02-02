@@ -21,6 +21,7 @@ const Item = (props: { item: Product }) => {
       <div className="color-container">
         {item.colors.map((color, index) => (
           <div
+            key={color + item.name}
             style={{ backgroundColor: color }}
             onClick={() => setCurrentIndex(index)}
             className="color"
@@ -33,7 +34,15 @@ const Item = (props: { item: Product }) => {
         {item.price_512 && <p className="price">512GB: {item.price_512}</p>}
         {item.price_1t && <p className="price">1TB: {item.price_1t}</p>}
       </div>
-      <S.ButtonBuy>
+      <S.ButtonBuy
+        onClick={() => {
+          window.scrollTo({
+            left: 0,
+            top: document.body.scrollHeight,
+            behavior: 'smooth',
+          })
+        }}
+      >
         <p className="text-buy">Đặt cọc ngay</p>
       </S.ButtonBuy>
     </S.ItemContainer>
