@@ -1,8 +1,7 @@
-import { ProductList } from './components/Product'
-import { Heading } from '~/components/Heading'
 import OrderBox from '~/components/OrderBox'
 
 import * as S from './Home.styles'
+import { ProductList } from './components/Product'
 import BannerImg from './images/banner.jpg'
 import Banner1080Img from './images/banner_1080.jpg'
 
