@@ -15,6 +15,7 @@ export const Box = styled.div`
       justify-content: center;
       .sub-header-1 {
         margin-top: 8px;
+        width: fit-content;
       }
       .sub-header-2 {
         margin-bottom: 24px;
@@ -25,6 +26,11 @@ export const Box = styled.div`
       h6 {
         max-width: 750px;
         font-weight: 500;
+        ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+            max-width: 95vw;
+            width: fit-content;
+            line-break: auto;
+        `}
       }
       .field {
         width: 100%;

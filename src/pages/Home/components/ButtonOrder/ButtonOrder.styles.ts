@@ -20,8 +20,11 @@ export const Container = styled.div`
     flex-direction: row;
   }
 
-  @media (max-width: 712px) {
-  }
+  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+    .content {
+      flex-direction: column;
+    }
+  `}
 `
 
 export const Button = styled.div<{ bgColor: string }>`
@@ -74,12 +77,20 @@ export const Button = styled.div<{ bgColor: string }>`
     }
   }
   cursor: pointer;
+
+  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+    margin-top: 24px;
+  `}
 `
 
 export const LastButton = styled(Button)<{ bgColor: string }>`
   margin-top: 42px;
   border: 1px solid white;
-  min-height: 65px;
+  min-height: 76px;
+  min-width: 282px;
+  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+    margin-top: 24px;
+  `}
 `
 
 export const Expand = styled.div<{ hidden: boolean }>`
@@ -92,4 +103,7 @@ export const Expand = styled.div<{ hidden: boolean }>`
   background-color: #252525;
   border-radius: 8px;
   opacity: ${({ hidden }) => (hidden ? 0 : 1)};
+  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+    width: 95vw;
+  `}
 `
