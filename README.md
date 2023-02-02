@@ -1,8 +1,4 @@
-<p align="center">
-  <img src=".github/assets/hero-illustration.svg" alt="A developer siting in front of a computer" />
-</p>
-
-# Boilerplate: Vite + React
+# Landing Page: Samsung S23
 
 ---
 
@@ -81,5 +77,5 @@ yarn preview
 
 ---
 
-Made with ♥️ by Adeonir Kohl
+Made with ♥️ by Matterhorn063
 # samsung-s23
