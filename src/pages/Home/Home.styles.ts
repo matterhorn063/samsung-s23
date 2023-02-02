@@ -1,32 +1,31 @@
 import styled, { css } from 'styled-components'
 
-export const Page = styled.div`
-  ${({ theme }) => css`
-    padding: ${theme.spacing[16]};
-
-    ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
-      ${css`
-        background-color: red;
-      `}
-    `};
-  `}
-`
-
 export const Container = styled.div`
-  ${({ theme }) => css`
-    padding: ${theme.spacing[8]};
-    max-width: 60rem;
-    margin-inline: auto;
+  width: 100%;
+  background-color: black;
 
-    h1 {
-      margin-bottom: ${theme.spacing[8]};
+  .banner {
+    object-fit: contain;
+    object-position: top;
+    width: 100%;
+    padding-bottom: 32px;
+  }
+
+  .banner_full {
+    display: block;
+  }
+
+  .banner_mobile {
+    display: none;
+  }
+
+  @media (max-width: 1080px) {
+    .banner_full {
+      display: none;
     }
 
-    p {
-      color: ${theme.colors.slate[800]};
-      margin-bottom: ${theme.spacing[8]};
-      font-size: 1.8rem;
-      line-height: 2;
+    .banner_mobile {
+      display: block;
     }
-  `}
+  }
 `
