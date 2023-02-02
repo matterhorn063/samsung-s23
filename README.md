@@ -60,6 +60,11 @@ And then:
 yarn preview
 ```
 
+Run local server:
+```
+yarn serve:dist
+```
+
 ## Commands
 
 - `dev`: runs your application on `localhost:3000`

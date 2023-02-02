@@ -9,7 +9,7 @@ const Item = (props: { item: Product }) => {
   const [currentIndex, setCurrentIndex] = React.useState(2)
 
   return (
-    <S.ItemContainer currentIndex={currentIndex}>
+    <S.ItemContainer currentIndex={currentIndex} data-aos="fade-up">
       <div
         style={{
           width: `${item.widthPercent}%`,

@@ -157,7 +157,7 @@ const OrderBox = memo(() => {
     </option>
   )
   return (
-    <S.Box className="container">
+    <S.Box className="container" data-aos="zoom-out">
       <Form className="form" onSubmit={submitHandler}>
         <h3>Đặt Trước Ngay, nhận ưu đãi đặc quyền</h3>
         <h6 className="sub-header-1">
