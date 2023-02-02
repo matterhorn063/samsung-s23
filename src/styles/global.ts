@@ -85,7 +85,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     h6 {
       color: ${theme.colors.white};
-      font-size: 18px;
+      font-size: 16px;
       line-height: 140%;
       text-align: center;
     }

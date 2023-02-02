@@ -4,6 +4,7 @@ export const Box = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.black};
     padding: ${theme.spacing[16]};
+    margin-top: 32px;
     ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
       padding: ${theme.spacing[10]};
     `}
@@ -13,10 +14,10 @@ export const Box = styled.div`
       align-items: center;
       justify-content: center;
       .sub-header-1 {
-        margin-top: 4px;
+        margin-top: 8px;
       }
       .sub-header-2 {
-        margin-bottom: 16px;
+        margin-bottom: 24px;
       }
       h3 {
         max-width: 800px;
@@ -50,6 +51,7 @@ export const ButtonSubmit = styled.button`
   ${({ theme }) => css`
     background-color: ${theme.colors.white} !important;
     margin-top: 12px;
+    margin-bottom: 60px;
     width: 257px;
     height: 56px;
     border-radius: 28px;
