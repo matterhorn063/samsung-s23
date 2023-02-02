@@ -4,6 +4,9 @@ export const Box = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.black};
     padding: ${theme.spacing[16]};
+    ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+      padding: ${theme.spacing[10]};
+    `}
     .form {
       display: flex;
       flex-direction: column;
