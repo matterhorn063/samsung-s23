@@ -23,7 +23,7 @@ export const Container = styled.div`
   }
 `
 
-export const ItemContainer = styled.div`
+export const ItemContainer = styled.div<{ currentIndex: number }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +32,10 @@ export const ItemContainer = styled.div`
 
   .img {
     width: 100%;
+    :hover {
+      transform: scale(1.08);
+      transition: all 0.2s ease-in-out;
+    }
   }
 
   .name {
@@ -52,6 +56,11 @@ export const ItemContainer = styled.div`
       border-radius: 12px;
       margin-left: 4px;
       margin-right: 4px;
+      :hover {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+      transition: all 0.2s ease-in-out;
     }
   }
 
@@ -86,22 +95,25 @@ export const ButtonBuy = styled.div`
   padding-right: 24px;
   height: 48px;
   margin-top: 16px;
+
   .text-buy {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     text-align: center;
   }
 
-  background-color: #416445;
+  background: linear-gradient(45deg, #92d38c 0%, #51965c 30%, #416445 100%);
   border-radius: 20px;
   cursor: pointer;
 
   :hover {
     transform: scaleX(1.02);
   }
+
   :active {
     transform: translateY(-2px);
   }
+
   transition: all 0.2s ease-in-out;
 `

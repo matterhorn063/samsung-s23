@@ -51,15 +51,28 @@ export const ButtonSubmit = styled.button`
     height: 56px;
     border-radius: 28px;
     color: ${theme.colors.black};
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.6;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
     :hover {
       transform: scaleX(1.02);
     }
     :active {
       transform: translateY(-2px);
+    }
+    .button-text {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin: 0;
+    }
+    .loader {
+      width: 18px;
+      height: 18px;
+      margin-left: 12px;
     }
     transition: all 0.2s ease-in-out;
   `}

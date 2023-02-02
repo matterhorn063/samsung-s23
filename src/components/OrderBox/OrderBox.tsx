@@ -1,8 +1,11 @@
-import React, { Component, memo } from 'react'
-import { Button, Container, Form, Header } from 'semantic-ui-react'
+import axios from 'axios'
+import React, { memo } from 'react'
+import toast, { LoaderIcon, Toaster } from 'react-hot-toast'
+import { Form, Loader } from 'semantic-ui-react'
 
 import * as S from './OrderBox.styles'
-import { Box } from './OrderBox.styles'
+
+const notify = () => toast('Cảm ơn, bạn đã đang ký thành công.')
 
 export interface IOrderState {
   name: string
@@ -11,7 +14,7 @@ export interface IOrderState {
 
   product: string
   color: string
-  address: string
+  store: string
 }
 
 export interface IOptionItem {
@@ -73,10 +76,10 @@ export const Colors: IOptionItem[] = [
   },
 ]
 
-export const Address: IOptionItem[] = [
+export const Stores: IOptionItem[] = [
   {
     value: '',
-    name: 'Địa chỉ Galaxy',
+    name: 'Địa chỉ Galaxy House gần bạn nhất',
   },
   {
     value: 'HCM - 203 Nguyễn Thái Sơn, Q.Gò Vấp',
@@ -88,7 +91,11 @@ export const Address: IOptionItem[] = [
   },
   {
     value: 'HCM - 694 Tỉnh Lộ 10, Q.Bình Tân',
-    name: 'HCM - 398-400 Quốc Lộ 50, H.Bình Chánh',
+    name: 'HCM - 694 Tỉnh Lộ 10, Q.Bình Tân',
+  },
+  {
+    value: 'HCM - 398-400 Quốc Lộ 50, H.Bình Chánh',
+    name: 'HCM - 398-400 Quốc Lộ 50, H.Bình Chánh ',
   },
 ]
 
@@ -99,8 +106,10 @@ const OrderBox = memo(() => {
     email: '',
     product: '',
     color: '',
-    address: '',
+    store: '',
   })
+
+  const [loading, setLoading] = React.useState<boolean>(false)
 
   const changeHandler = (e: any) => {
     setState((value) => ({
@@ -109,9 +118,37 @@ const OrderBox = memo(() => {
     }))
   }
 
-  const submitHandler = (e: any) => {
+  const submitHandler = async (e: any) => {
     e.preventDefault()
-    console.log('STATE: ', state)
+    try {
+      const { name, phone, email, product, color, store } = state
+      setLoading(true)
+      const func = axios.post(
+        'https://sheet.best/api/sheets/44dbacec-0190-4b19-8209-9f0dfb52b2d8',
+        {
+          Name: name,
+          Phone: phone,
+          Email: email,
+
+          Product: product,
+          Color: color,
+          Store: store,
+          Create_at: new Date().toLocaleString(),
+        }
+      )
+      toast
+        .promise(func, {
+          loading: 'Loading',
+          success: 'Cảm ơn, bạn đã đang ký thành công.',
+          error: 'Error when fetching',
+        })
+        .finally(() => {
+          setLoading(false)
+        })
+      // notify()
+    } catch (e) {
+      // handle error
+    }
   }
 
   const renderOption = (option: IOptionItem) => (
@@ -119,7 +156,6 @@ const OrderBox = memo(() => {
       {option.name}
     </option>
   )
-
   return (
     <S.Box className="container">
       <Form className="form" onSubmit={submitHandler}>
@@ -184,18 +220,33 @@ const OrderBox = memo(() => {
         </Form.Field>
         <Form.Field>
           <select
-            id="address"
+            id="store"
             data-selected={true}
             required={true}
             onChange={changeHandler}
           >
-            {Address.map(renderOption)}
+            {Stores.map(renderOption)}
           </select>
         </Form.Field>
-        <S.ButtonSubmit color="black" type="submit">
-          Đặt trước ngay
+        <S.ButtonSubmit color="black" type="submit" disabled={loading}>
+          <p className="button-text">Đặt trước ngay</p>
+          {loading && <LoaderIcon className="loader" />}
         </S.ButtonSubmit>
       </Form>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          className: '',
+          duration: 5000,
+          success: {
+            duration: 3000,
+          },
+        }}
+      />
     </S.Box>
   )
 })
