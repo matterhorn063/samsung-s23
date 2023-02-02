@@ -91,7 +91,11 @@ export const Stores: IOptionItem[] = [
   },
   {
     value: 'HCM - 694 Tỉnh Lộ 10, Q.Bình Tân',
-    name: 'HCM - 398-400 Quốc Lộ 50, H.Bình Chánh',
+    name: 'HCM - 694 Tỉnh Lộ 10, Q.Bình Tân',
+  },
+  {
+    value: 'HCM - 398-400 Quốc Lộ 50, H.Bình Chánh',
+    name: 'HCM - 398-400 Quốc Lộ 50, H.Bình Chánh ',
   },
 ]
 
@@ -129,6 +133,7 @@ const OrderBox = memo(() => {
           Product: product,
           Color: color,
           Store: store,
+          Create_at: new Date().toLocaleString(),
         }
       )
       toast
