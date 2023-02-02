@@ -14,14 +14,14 @@ const ButtonOrder = () => {
   return (
     <S.Container>
       <div className="content" onClick={onClick}>
-        <S.Button bgColor="#DD000D">
+        <S.Button bgColor="#94A2F2">
           <p className="text">ĐẶT TRƯỚC NGAY</p>
           <div className="desc-container">
             <p className="desc">Giá trị đặt cọc</p>
             <p className="price">1,000,000đ</p>
           </div>
         </S.Button>
-        <S.Button bgColor="#005FFF" onClick={onClick}>
+        <S.Button bgColor="#1A73E8" onClick={onClick}>
           <p className="text">ĐẶT TRẢ GÓP 0%</p>
           <div className="desc-container">
             <p className="desc">Giá trị đặt cọc</p>

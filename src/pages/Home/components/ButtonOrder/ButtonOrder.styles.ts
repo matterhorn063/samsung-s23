@@ -5,7 +5,8 @@ export const Container = styled.div`
   background-color: black;
   display: flex;
   justify-content: center;
-  padding-bottom: 32px;
+  padding-bottom: 100px;
+  padding-top: 40px;
   margin-top: -8px;
 
   .content {
@@ -18,14 +19,21 @@ export const Container = styled.div`
 `
 
 export const Button = styled.div<{ bgColor: string }>`
+  :hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  animation: all 0.2s ease-in-out;
+  transform-origin: 50% 50%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-width: 200px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 6px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 12px;
   margin-left: 8px;
   margin-right: 8px;
 
@@ -59,16 +67,5 @@ export const Button = styled.div<{ bgColor: string }>`
       text-align: center;
     }
   }
-
   cursor: pointer;
-
-  :hover {
-    transform: scaleX(1.02);
-  }
-
-  :active {
-    transform: translateY(-2px);
-  }
-
-  transition: all 0.2s ease-in-out;
 `
