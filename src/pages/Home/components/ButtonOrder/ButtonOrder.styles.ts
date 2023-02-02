@@ -1,13 +1,19 @@
 import styled from 'styled-components'
 
+export const Main = styled.div`
+  padding-bottom: 60px;
+  padding-top: 40px;
+  margin-top: -8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 export const Container = styled.div`
   width: 100%;
   background-color: black;
   display: flex;
   justify-content: center;
-  padding-bottom: 100px;
-  padding-top: 40px;
-  margin-top: -8px;
 
   .content {
     display: flex;
@@ -68,4 +74,22 @@ export const Button = styled.div<{ bgColor: string }>`
     }
   }
   cursor: pointer;
+`
+
+export const LastButton = styled(Button)<{ bgColor: string }>`
+  margin-top: 42px;
+  border: 1px solid white;
+  min-height: 65px;
+`
+
+export const Expand = styled.div<{ hidden: boolean }>`
+  margin-top: 32px;
+  color: white;
+  width: 450px;
+  line-height: 32px;
+  padding: 16px;
+  font-weight: 500;
+  background-color: #252525;
+  border-radius: 8px;
+  opacity: ${({ hidden }) => (hidden ? 0 : 1)};
 `
