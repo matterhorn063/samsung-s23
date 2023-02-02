@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
@@ -10,6 +10,7 @@ export const Container = styled.div`
 
   .content {
     width: 100%;
+    max-width: 1280px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -95,4 +96,12 @@ export const ButtonBuy = styled.div`
   background-color: #416445;
   border-radius: 20px;
   cursor: pointer;
+
+  :hover {
+    transform: scaleX(1.02);
+  }
+  :active {
+    transform: translateY(-2px);
+  }
+  transition: all 0.2s ease-in-out;
 `
