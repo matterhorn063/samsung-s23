@@ -1,10 +1,11 @@
 import React from 'react'
 
-import * as S from './Section.styles'
 import Section1 from '../../images/section_1.jpg'
 import Section2 from '../../images/section_2.jpg'
-import Section3 from '../../images/section_4.jpg'
 import Section4 from '../../images/section_3.jpg'
+import Section3 from '../../images/section_4.jpg'
+
+import * as S from './Section.styles'
 
 export enum SectionImageType {
   left,
@@ -80,7 +81,7 @@ const data: ISection[] = [
 const Sections = () => {
   const renderSection = (item: ISection) => {
     return (
-      <S.SectionContainer type={item.type}>
+      <S.SectionContainer type={item.type} data-aos="slide-up">
         <div className="img-container">
           <img className="img" src={item.image} />
         </div>
