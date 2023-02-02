@@ -26,6 +26,7 @@ export const theme = {
     black: '#000',
     white: '#fff',
     gray: '#6a6d72',
+    bg1: 'rgb(51, 51, 51)',
     slate: {
       50: '#f8fafc',
       100: '#f1f5f9',

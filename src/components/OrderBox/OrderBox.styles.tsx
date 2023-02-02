@@ -9,8 +9,11 @@ export const Box = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      .sub-header {
+      .sub-header-1 {
         margin-top: 4px;
+      }
+      .sub-header-2 {
+        margin-bottom: 16px;
       }
       h3 {
         max-width: 800px;
@@ -21,8 +24,8 @@ export const Box = styled.div`
       }
       .field {
         width: 100%;
-        font-size: 20px;
-        margin-top: 22px;
+        font-size: 18px;
+        margin-top: 4px;
         max-width: 650px;
         font-weight: 500;
         select,
@@ -43,7 +46,7 @@ export const Box = styled.div`
 export const ButtonSubmit = styled.button`
   ${({ theme }) => css`
     background-color: ${theme.colors.white} !important;
-    margin-top: 26px;
+    margin-top: 12px;
     width: 257px;
     height: 56px;
     border-radius: 28px;

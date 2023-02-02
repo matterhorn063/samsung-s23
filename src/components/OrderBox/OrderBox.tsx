@@ -124,12 +124,14 @@ const OrderBox = memo(() => {
     <S.Box className="container">
       <Form className="form" onSubmit={submitHandler}>
         <h3>Đặt Trước Ngay, nhận ưu đãi đặc quyền</h3>
-        <h6 className="sub-header">
+        <h6 className="sub-header-1">
           Quý khách hàng vui lòng điền thông tin và chọn sản phẩm muốn mua. Nhân
           viên của Galaxy House sẽ liên hệ Quý khách hàng để tư vấn và hoàn tất
           thủ tục đặt trước.
         </h6>
-        <h6>Mọi thắc mắc xin liên hệ hotline: 1900.638436</h6>
+        <h6 className="sub-header-2">
+          Mọi thắc mắc xin liên hệ hotline: 1900.638436
+        </h6>
         <Form.Field>
           <input
             placeholder="Họ và tên"

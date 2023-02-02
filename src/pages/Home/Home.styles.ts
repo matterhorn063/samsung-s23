@@ -9,6 +9,11 @@ export const Container = styled.div`
     object-position: top;
     width: 100%;
     padding-bottom: 32px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
   }
 
   .banner_full {
