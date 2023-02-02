@@ -1,3 +1,23 @@
+import { css } from 'styled-components'
+
+export const MEDIA_WIDTHS = {
+  deprecated_upToExtraSmall: 500,
+  deprecated_upToSmall: 720,
+  deprecated_upToMedium: 960,
+  deprecated_upToLarge: 1280,
+}
+
+const deprecated_mediaWidthTemplates: {
+  [width in keyof typeof MEDIA_WIDTHS]: typeof css
+} = Object.keys(MEDIA_WIDTHS).reduce((accumulator, size) => {
+  ;(accumulator as any)[size] = (a: any, b: any, c: any) => css`
+    @media (max-width: ${(MEDIA_WIDTHS as any)[size]}px) {
+      ${css(a, b, c)}
+    }
+  `
+  return accumulator
+}, {}) as any
+
 export const theme = {
   colors: {
     inherit: 'inherit',
@@ -91,4 +111,6 @@ export const theme = {
     /** 384px */
     96: '24rem',
   },
+
+  deprecated_mediaWidth: deprecated_mediaWidthTemplates,
 }

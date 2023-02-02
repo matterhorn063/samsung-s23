@@ -3,6 +3,12 @@ import styled, { css } from 'styled-components'
 export const Page = styled.div`
   ${({ theme }) => css`
     padding: ${theme.spacing[16]};
+
+    ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+      ${css`
+        background-color: red;
+      `}
+    `};
   `}
 `
 

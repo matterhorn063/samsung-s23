@@ -9,7 +9,6 @@ export function AppRoutes() {
     <Routes>
       <Route element={<Base />}>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
       </Route>
     </Routes>
   )
