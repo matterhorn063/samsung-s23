@@ -17,14 +17,14 @@ const ButtonOrder = () => {
         <S.Button bgColor="#DD000D">
           <p className="text">ĐẶT TRƯỚC NGAY</p>
           <div className="desc-container">
-            <p className="desc">Giá trị đặt cọc</p>
+            <p className="desc">Giá trị cọc</p>
             <p className="price">1,000,000đ</p>
           </div>
         </S.Button>
         <S.Button bgColor="#005FFF" onClick={onClick}>
           <p className="text">ĐẶT TRẢ GÓP 0%</p>
           <div className="desc-container">
-            <p className="desc">Giá trị đặt cọc</p>
+            <p className="desc">Giá trị cọc</p>
             <p className="price">1,000,000đ</p>
           </div>
         </S.Button>

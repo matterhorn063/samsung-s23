@@ -30,6 +30,10 @@ export const ItemContainer = styled.div<{ currentIndex: number }>`
   justify-content: flex-end;
   width: 100%;
 
+  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+    margin-top: 20px;
+  `}
+
   .img {
     width: 100%;
     :hover {
@@ -71,17 +75,24 @@ export const ItemContainer = styled.div<{ currentIndex: number }>`
   }
 
   .price-container {
-    height: 68px;
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     .price {
-      font-weight: 400;
-      line-height: 16px;
-      font-size: 14px;
+      font-weight: 500;
+      line-height: 120%;
+      font-size: 16px;
       text-align: center;
+      .price-amount {
+        font-weight: 700;
+        line-height: 120%;
+        font-size: 18px;
+        text-align: center;
+        color: #487a4f;
+      }
     }
   }
 `
@@ -94,7 +105,7 @@ export const ButtonBuy = styled.div`
   padding-left: 24px;
   padding-right: 24px;
   height: 48px;
-  margin-top: 16px;
+  margin-top: 22px;
 
   .text-buy {
     font-weight: 500;
@@ -116,4 +127,8 @@ export const ButtonBuy = styled.div`
   }
 
   transition: all 0.2s ease-in-out;
+
+  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
+    width: 65vw;
+  `}
 `

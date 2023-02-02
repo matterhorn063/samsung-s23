@@ -1,4 +1,5 @@
 import React from 'react'
+import { Image } from 'semantic-ui-react'
 
 import * as S from './Product.styles'
 import { Product, products } from './Product.types'
@@ -8,13 +9,13 @@ const Item = (props: { item: Product }) => {
   const [currentIndex, setCurrentIndex] = React.useState(2)
 
   return (
-    <S.ItemContainer currentIndex={currentIndex}>
+    <S.ItemContainer currentIndex={currentIndex} data-aos="fade-up">
       <div
         style={{
           width: `${item.widthPercent}%`,
         }}
       >
-        <img className="img" src={item.imgs[currentIndex]}></img>
+        <Image className="img" src={item.imgs[currentIndex]}></Image>
       </div>
 
       <p className="name">{item.name}</p>
@@ -30,9 +31,22 @@ const Item = (props: { item: Product }) => {
       </div>
       <p className="label-price">Giá bán</p>
       <div className="price-container">
-        <p className="price">256GB: {item.price_256}</p>
-        {item.price_512 && <p className="price">512GB: {item.price_512}</p>}
-        {item.price_1t && <p className="price">1TB: {item.price_1t}</p>}
+        <p className="price">
+          256GB:&nbsp;&nbsp;
+          <span className="price-amount">{item.price_256}</span>
+        </p>
+        {item.price_512 && (
+          <p className="price">
+            512GB:&nbsp;&nbsp;
+            <span className="price-amount">{item.price_512}</span>
+          </p>
+        )}
+        {item.price_1t && (
+          <p className="price">
+            1TB:&nbsp;&nbsp;
+            <span className="price-amount">{item.price_1t}</span>
+          </p>
+        )}
       </div>
       <S.ButtonBuy
         onClick={() => {

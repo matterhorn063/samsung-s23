@@ -1,11 +1,11 @@
 import OrderBox from '~/components/OrderBox'
 
 import * as S from './Home.styles'
+import { ButtonOrder } from './components/ButtonOrder'
 import { ProductList } from './components/Product'
+import { Sections } from './components/Section'
 import BannerImg from './images/banner.jpg'
 import Banner1080Img from './images/banner_1080.jpg'
-import { Sections } from './components/Section'
-import { ButtonOrder } from './components/ButtonOrder'
 
 export function Home() {
   return (
