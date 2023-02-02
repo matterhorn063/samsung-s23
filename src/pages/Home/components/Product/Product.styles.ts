@@ -5,8 +5,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   background-color: white;
-  padding-bottom: 32px;
-  padding-top: 16px;
+  padding-bottom: 48px;
+  padding-top: 24px;
 
   .content {
     width: 100%;

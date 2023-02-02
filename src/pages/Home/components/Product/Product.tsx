@@ -40,7 +40,7 @@ const Item = (props: { item: Product }) => {
   )
 }
 
-export function ProductList() {
+const ProductList = () => {
   return (
     <S.Container>
       <div className="content">
@@ -51,3 +51,5 @@ export function ProductList() {
     </S.Container>
   )
 }
+
+export default React.memo(ProductList)

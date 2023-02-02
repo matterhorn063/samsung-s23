@@ -4,6 +4,7 @@ import * as S from './Home.styles'
 import { ProductList } from './components/Product'
 import BannerImg from './images/banner.jpg'
 import Banner1080Img from './images/banner_1080.jpg'
+import { Sections } from './components/Section'
 
 export function Home() {
   return (
@@ -11,6 +12,7 @@ export function Home() {
       <img alt="banner" className="banner banner_full" src={BannerImg} />
       <img alt="banner" className="banner banner_mobile" src={Banner1080Img} />
       <ProductList />
+      <Sections />
       <OrderBox />
     </S.Container>
   )
