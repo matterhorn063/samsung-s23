@@ -22,17 +22,9 @@ This is a [React](https://reactjs.org/) boilerplate using [Vite Builder](https:/
 
 ## Getting Started
 
-Make a copy:
+Install the dependencies:
 
 ```
-npx degit adeonir/boilerplate-react-vite my-project
-```
-
-Enter the new created folder, initiate a git repository and install the dependencies:
-
-```
-cd my-project
-git init
 yarn install
 ```
 
