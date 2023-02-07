@@ -1,12 +1,28 @@
 import axios from 'axios'
 import React, { memo } from 'react'
 import toast, { LoaderIcon, Toaster } from 'react-hot-toast'
-import { Form, Loader } from 'semantic-ui-react'
+import Modal from 'react-modal'
+import { Form } from 'semantic-ui-react'
 
 import * as S from './OrderBox.styles'
+import { CloseBtn } from './OrderBox.styles'
+import SuccessImg from './images/success.jpg'
 
-const notify = () => toast('Cảm ơn, bạn đã đang ký thành công.')
+Modal.defaultStyles.overlay.backgroundColor = 'rgba(13,17,23,0.8)'
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: 'transparent',
+    border: 'none',
+    padding: 0,
+  },
+}
 export interface IOrderState {
   name: string
   phone: string
@@ -110,6 +126,17 @@ const OrderBox = memo(() => {
   })
 
   const [loading, setLoading] = React.useState<boolean>(false)
+  const [modalIsOpen, setIsOpen] = React.useState(false)
+
+  const openModal = () => {
+    setIsOpen(true)
+  }
+
+  const afterOpenModal = () => {}
+
+  const closeModal = () => {
+    setIsOpen(false)
+  }
 
   const changeHandler = (e: any) => {
     setState((value) => ({
@@ -144,6 +171,7 @@ const OrderBox = memo(() => {
         })
         .finally(() => {
           setLoading(false)
+          openModal()
         })
       // notify()
     } catch (e) {
@@ -247,6 +275,15 @@ const OrderBox = memo(() => {
           },
         }}
       />
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <CloseBtn onClick={closeModal}>X</CloseBtn>
+        <img src={SuccessImg} style={{ borderRadius: 12 }} />
+      </Modal>
     </S.Box>
   )
 })

@@ -8,6 +8,9 @@ export const Box = styled.div`
     ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
       padding: ${theme.spacing[10]};
     `}
+    .ReactModal__Modal {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+    }
     .form {
       display: flex;
       flex-direction: column;
@@ -87,4 +90,21 @@ export const ButtonSubmit = styled.button`
     }
     transition: all 0.2s ease-in-out;
   `}
+`
+
+export const CloseBtn = styled.div`
+  background-color: white;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 4px;
+  font-weight: 800;
+  cursor: pointer;
+  :hover {
+    opacity: 0.8;
+  }
 `
