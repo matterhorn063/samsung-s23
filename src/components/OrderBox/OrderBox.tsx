@@ -132,7 +132,9 @@ const OrderBox = memo(() => {
     setIsOpen(true)
   }
 
-  const afterOpenModal = () => {}
+  const afterOpenModal = () => {
+    // todo
+  }
 
   const closeModal = () => {
     setIsOpen(false)
