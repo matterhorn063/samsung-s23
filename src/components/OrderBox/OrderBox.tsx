@@ -8,6 +8,8 @@ import * as S from './OrderBox.styles'
 import { CloseBtn } from './OrderBox.styles'
 import SuccessImg from './images/success.jpg'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 Modal.defaultStyles.overlay.backgroundColor = 'rgba(13,17,23,0.8)'
 
 const customStyles = {
